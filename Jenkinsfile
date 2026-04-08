@@ -7,8 +7,8 @@ pipeline{
       steps{
         script{
           
-          girCheckout(
-            branc: "main"
+          gitCheckout(
+            branch: "main",
             url: "https://github.com/Sarthakcha/devops0804.git"
           )
         }
