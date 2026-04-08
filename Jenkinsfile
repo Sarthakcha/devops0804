@@ -1,3 +1,4 @@
+@Library('gw-shared-library') _
 pipeline{
 
   agent any
@@ -5,7 +6,11 @@ pipeline{
     stage('Git Checkout'){
       steps{
         script{
-          git branch: 'main', url: 'https://github.com/Sarthakcha/devops0804.git'
+          
+          girCheckout(
+            branc: "main"
+            url: "https://github.com/Sarthakcha/devops0804.git"
+          )
         }
       }
     }
