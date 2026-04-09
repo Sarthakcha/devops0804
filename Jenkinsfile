@@ -20,7 +20,7 @@ pipeline{
     }
     
      stage('Unit Test Maven'){
-      when { expression { param.action == 'create'}}
+      when { expression { params.action == 'create'}}
       steps{
         script{
           
@@ -29,8 +29,8 @@ pipeline{
         } 
       }
     }
-    stage('mvn inyegration Test'){
-      when { expression { param.action == 'create'}}
+    stage('mvn integration Test'){
+      when { expression { params.action == 'create'}}
       steps{
         script{
           
