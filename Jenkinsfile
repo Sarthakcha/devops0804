@@ -23,6 +23,15 @@ pipeline{
         } 
       }
     }
+    stage('mvn inyegration Test'){
+      steps{
+        script{
+          
+           mvnIntegretionTest()
+          
+        } 
+      }
+    }
   }
 }
 
