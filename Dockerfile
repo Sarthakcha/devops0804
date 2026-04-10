@@ -9,4 +9,4 @@ COPY ./target/*.jar app.jar
 EXPOSE 8081
 
 # Run the application
-CMD["java", "-jar", "app.jar"]
+CMD ["java", "-jar", "app.jar"]
