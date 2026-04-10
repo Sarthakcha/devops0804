@@ -42,7 +42,7 @@ pipeline{
     stage('Static code analysis: Sonarqube'){
       steps{
         script{
-          def credentialsId = 'sonar-api'
+          def credentialsId = 'sonar-token-fixed'
           staticCodeAnalysis(credentialsId)
           
         } 
