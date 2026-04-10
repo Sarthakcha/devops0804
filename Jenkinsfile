@@ -5,6 +5,9 @@ pipeline{
 
   parameters{
     choice(name: 'action', choices: 'create\ndelete', description: 'choose create/Destroy')
+    string(name: 'ImageName',  description: "name of the docker build", defaultvalues: 'javaapp')
+    string(name: 'ImageTag',  description: "tag of the docker build", defaultvalues: 'v1')
+    string(name: 'AppName',  description: "name of the docker build", defaultvalues: 'springboot')
   }
   stages{
     stage('Git Checkout'){
@@ -44,6 +47,22 @@ pipeline{
         script{
           def credentialsId = 'sonar-token-fixed'
           staticCodeAnalysis(credentialsId)
+          
+        } 
+      }
+    }
+    stage('Maven Build: Maven'){
+      steps{
+        script{
+          mvnBuild()
+          
+        } 
+      }
+    }
+     stage('Docker Image: Build'){
+      steps{
+        script{
+          dockerBuild("${params.ImageName}","${params.ImageTag}","${params.AppName}")
           
         } 
       }
