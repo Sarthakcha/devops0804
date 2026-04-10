@@ -1,4 +1,4 @@
-FROM openjdk:17-alpine
+FROM amazoncorretto:17-alpine
 WORKDIR /MyJavaProject/my-app
 
 # Copy the built jar from the first stage
