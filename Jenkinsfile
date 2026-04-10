@@ -67,6 +67,14 @@ pipeline{
         } 
       }
     }
+     stage('Docker Image Scan: trvy'){
+      steps{
+        script{
+          dockerImageScan("${params.ImageName}","${params.ImageTag}","${params.AppName}")
+          
+        } 
+      }
+    }
   }
 }
 
