@@ -1,4 +1,4 @@
-@Library('gw-shared-library') _
+@Library('my-shared-lib') _
 pipeline{
 
   agent any
